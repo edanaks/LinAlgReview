@@ -11,20 +11,21 @@ output: pdf_document
 
 ## Matrices
 
-1. Matrices are rectangular arrays of numbers.
-2. Example of a matrix of dimension $2\times 3:$
++ Matrices are rectangular arrays of numbers.
++ Example of a matrix of dimension $2\times 3:$
 $$
 \mathbf{A}=\left[\begin{array}{rrr} 1 & 2 & 3 \\ 4 & 5 & 6 \end{array}\right]
 $$
-1. $\mathbf{A}_{i,j}$ denotes the entry in $i^\text{th}$ row and $j^\text{th}$ column. So, $\mathbf{A}_{2,1} =4.$
-4. Column vectors of dimension $n$ are matrices of dimension $n \times 1$.
-5. Row vectors of dimension $n$ are matrices of dimension $1\times n$.
-6. Totality of row vectors of a fixed dimension $n$ is denoted as $\mathbb{R}^n$.
-7. One can only add or subtract matrices of the **same size**.
-8. The zero matrix $\mathbf{0}$ is a matrix each of whose entries is a zero.
-7. Identity matrix $\mathbf{I}_n$ of size $n$ is a matrix with 1's on the diagonal and zeroes elsewhere.
-1. In this class, matrices and vectors will be written with boldface letters, like $\mathbf{A, x, b}$ etc.
++ $\mathbf{A}_{i,j}$ denotes the entry in $i^\text{th}$ row and $j^\text{th}$ column. So, $\mathbf{A}_{2,1} =4.$
++ Column vectors of dimension $n$ are matrices of dimension $n \times 1$.
++ Row vectors of dimension $n$ are matrices of dimension $1\times n$.
++ Totality of row vectors of a fixed dimension $n$ is denoted as $\mathbb{R}^n$.
++ One can only add or subtract matrices of the **same size**.
++ The zero matrix $\mathbf{0}$ is a matrix each of whose entries is a zero.
++ Identity matrix $\mathbf{I}_n$ of size $n$ is a matrix with 1's on the diagonal and zeroes elsewhere.
++ Matrices and vectors will be written with boldface letters, like $\mathbf{A, x, b}$ etc.
 Unlike numeric variables, which will be written like $x,y,z$ etc.
+
 
 
 
@@ -52,9 +53,9 @@ numbers, and in general,
 
 ## Transpose of a Matrix
 
-1. Flips rows and columns of a matrix.
-2. From a $m\times n$ matrix, produces a $n\times m$ matrix.
-3. Example: $$\left[\begin{array}{rrrr} 1 & 2 & 3 & 0 \\\\ 4 & 5 & 6 & 8\end{array}\right]^T= 
++ Flips rows and columns of a matrix.
++ From a $m\times n$ matrix, produces a $n\times m$ matrix.
++ Example: $$\left[\begin{array}{rrrr} 1 & 2 & 3 & 0 \\\\ 4 & 5 & 6 & 8\end{array}\right]^T= 
 \left[\begin{array}{rr}1& 4\\2&5\\3&6\\0&8\end{array}\right]$$
 
 Properties:
@@ -132,14 +133,15 @@ on the left.
 
 ## Inverse of a matrix
 
-1. We talk of inverses only for square matrices.
-2. ***Inverse*** of an $n\times n$ matrix $\mathbf{A}$ (if it exists) is another $n\times n$ matrix $\mathbf{B}$
+- We talk of inverses only for square matrices.
+- ***Inverse*** of an $n\times n$ matrix $\mathbf{A}$ (if it exists) is another $n\times n$ matrix $\mathbf{B}$
 such that $$\mathbf{A}\cdot\mathbf{B} = \mathbf{I}_n = \mathbf{B}\cdot\mathbf{A}.$$
-3. Inverse, if it exists is unique. 
-4. Matrices without inverses are called **singular**, else are called **invertible** or **non-singular**. 
-5. If $\mathbf{A}$ is invertible, then $\mathbf{A}\mathbf{x}=\mathbf{b}$ has a *unique* solution for
+- Inverse, if it exists is unique. 
+- Matrices without inverses are called **singular**, else are called **invertible** or **non-singular**. 
+- If $\mathbf{A}$ is invertible, then $\mathbf{A}\mathbf{x}=\mathbf{b}$ has a *unique* solution for
 any vector $\mathbf{b}$ of appropriate size, and that solution is given by $\mathbf{x}=\mathbf{A}^{-1}\mathbf{b}.$
-6. A matrix is invertible if and only if its determinant is non-zero.
+- If $\mathbf{A},\mathbf{B}$ are invertible, then so is $\mathbf{A}\cdot\mathbf{B}$ and $(\mathbf{A}\cdot\mathbf{B})^{-1}=\mathbf{A}^{-1}\cdot\mathbf{B}^{-1}.$
+- A matrix is invertible if and only if its determinant is non-zero.
 
 Questions:  What is the RREF of an invertible matrix? What is the rank of an invertible matrix of size $n\times n$?
 

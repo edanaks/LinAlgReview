@@ -56,7 +56,7 @@
     <h2>Matrices</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
+    <ul>
 <li>Matrices are rectangular arrays of numbers.</li>
 <li>Example of a matrix of dimension \(2\times 3:\)
 \[
@@ -69,9 +69,9 @@
 <li>One can only add or subtract matrices of the <strong>same size</strong>.</li>
 <li>The zero matrix \(\mathbf{0}\) is a matrix each of whose entries is a zero.</li>
 <li>Identity matrix \(\mathbf{I}_n\) of size \(n\) is a matrix with 1&#39;s on the diagonal and zeroes elsewhere.</li>
-<li>In this class, matrices and vectors will be written with boldface letters, like \(\mathbf{A, x, b}\) etc.
+<li>Matrices and vectors will be written with boldface letters, like \(\mathbf{A, x, b}\) etc.
 Unlike numeric variables, which will be written like \(x,y,z\) etc.</li>
-</ol>
+</ul>
 
   </article>
   <!-- Presenter Notes -->
@@ -117,12 +117,12 @@ numbers, and in general,</p>
     <h2>Transpose of a Matrix</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
+    <ul>
 <li>Flips rows and columns of a matrix.</li>
 <li>From a \(m\times n\) matrix, produces a \(n\times m\) matrix.</li>
 <li>Example: \[\left[\begin{array}{rrrr} 1 & 2 & 3 & 0 \\\\ 4 & 5 & 6 & 8\end{array}\right]^T= 
 \left[\begin{array}{rr}1& 4\\2&5\\3&6\\0&8\end{array}\right]\]</li>
-</ol>
+</ul>
 
 <p>Properties:</p>
 
@@ -234,7 +234,7 @@ on the left.</li>
     <h2>Inverse of a matrix</h2>
   </hgroup>
   <article data-timings="">
-    <ol>
+    <ul>
 <li>We talk of inverses only for square matrices.</li>
 <li><strong><em>Inverse</em></strong> of an \(n\times n\) matrix \(\mathbf{A}\) (if it exists) is another \(n\times n\) matrix \(\mathbf{B}\)
 such that \[\mathbf{A}\cdot\mathbf{B} = \mathbf{I}_n = \mathbf{B}\cdot\mathbf{A}.\]</li>
@@ -242,8 +242,9 @@ such that \[\mathbf{A}\cdot\mathbf{B} = \mathbf{I}_n = \mathbf{B}\cdot\mathbf{A}
 <li>Matrices without inverses are called <strong>singular</strong>, else are called <strong>invertible</strong> or <strong>non-singular</strong>. </li>
 <li>If \(\mathbf{A}\) is invertible, then \(\mathbf{A}\mathbf{x}=\mathbf{b}\) has a <em>unique</em> solution for
 any vector \(\mathbf{b}\) of appropriate size, and that solution is given by \(\mathbf{x}=\mathbf{A}^{-1}\mathbf{b}.\)</li>
+<li>If \(\mathbf{A},\mathbf{B}\) are invertible, then so is \(\mathbf{A}\cdot\mathbf{B}\) and \((\mathbf{A}\cdot\mathbf{B})^{-1}=\mathbf{B}^{-1}\cdot\mathbf{A}^{-1}.\)</li>
 <li>A matrix is invertible if and only if its determinant is non-zero.</li>
-</ol>
+</ul>
 
 <p>Questions:  What is the RREF of an invertible matrix? What is the rank of an invertible matrix of size \(n\times n\)?</p>
 
