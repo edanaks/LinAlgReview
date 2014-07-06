@@ -334,11 +334,11 @@ Therefore,
 
 In each of the following cases, answer:
 
-1. If the columns of $\mathbf{A}$ span $\mathbb{R}^n$, for some appropriate value of $n$.
+1. If the columns span $\mathbb{R}^n$, for some appropriate value of $n$.
 1. What is this appropriate value of $n$?
-1. Are columns of $\mathbf{A}$ linearly independent?
-1. Which columns of $\mathbf{A}$ form a linearly independent set?
-1. Do columns of $\mathbf{A}$ form a basis of $\mathbb{R}^n$ for some appropriate value of $n$?
+1. Do the columns form a linearly independent set?
+1. If not, which columns form a linearly independent set?
+1. Do the columns form a basis of $\mathbb{R}^n$ for some appropriate value of $n$?
 
 --- .class #id
 
