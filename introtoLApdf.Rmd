@@ -108,6 +108,9 @@ $$\left[\begin{array}{rrrrr}\fbox{1} & 0 & 3 & 0 & 4\\0 & \fbox{1} & 2 & 0 & 1\\
 **It is easy to solve linear systems once their
 augmeted matrix is put in an RREF.** Example on the board.
 
+- Pivot columns correspond to **basic variables**. In this course, "basic" is also going to mean something completely different.
+- Non-pivot columns correspond to **free variables**
+
 **Therefore, the first (and the biggest) step in solving a linear system is transforming its augmented matrix
 in the RREF!**
 
