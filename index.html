@@ -1,0 +1,700 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Linear Algebra Review</title>
+  <meta charset="utf-8">
+  <meta name="description" content="Linear Algebra Review">
+  <meta name="author" content="Shashank Kanade">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>Linear Algebra Review</h1>
+    <h2>Linear Optimization - Math 354, Summer 2014</h2>
+    <p>Shashank Kanade<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <article data-timings="">
+    <style>em {  font-style: italic; text-decoration: underline}</style>
+
+<style>strong {  font-weight: bold; }</style>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Matrices</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Matrices are rectangular arrays of numbers.</li>
+<li>Example of a matrix of dimension \(2\times 3:\)
+\[
+\mathbf{A}=\left[\begin{array}{rrr} 1 & 2 & 3 \\ 4 & 5 & 6 \end{array}\right]
+\]</li>
+<li>\(\mathbf{A}_{ij}\) denotes the entry in \(i^\text{th}\) row and \(j^\text{th}\) column.</li>
+<li>Column vectors of dimension \(n\) are matrices of dimension \(n \times 1\).</li>
+<li>Row vectors of dimension \(n\) are matrices of dimension \(1\times n\).</li>
+<li>Totality of row vectors of a fixed dimension \(n\) is denoted as \(\mathbb{R}^n\).</li>
+<li>One can only add or subtract matrices of the <strong>same size</strong>.</li>
+<li>The zero matrix \(\mathbf{0}\) is a matrix each of whose entries is a zero.</li>
+<li>Identity matrix \(\mathbf{I}_n\) of size \(n\) is a matrix with 1&#39;s on the diagonal and zeroes elsewhere.</li>
+<li>In this class, matrices and vectors will be written with boldface letters, like \(\mathbf{A, x, b}\) etc.
+Unlike numeric variables, which will be written like \(x,y,z\) etc.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Matrix Multiplication</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Multiplying \(a\times b\) and \(b\times c\) matrices produces a matrix of size \(a\times c\).
+Example:
+\[\left[\begin{array}{rrr} 1 & 2 & 3 \\\\ 4 & 5 & 6 \end{array}\right]\times\left[\begin{array}{rr} 1 & -1  \\\\ 0 & -2 \\\\ 1 & -3 \end{array}\right]= \left[\begin{array}{rr} 4 & -14 \\\\ 10 & -32 \end{array}\right]\]
+Here, \((2\times 3)\cdot (3\times 2) = (2\times 2).\) </p>
+
+<p>One can also multiply a matrix by a scalar as follows:
+\[5\cdot\left[\begin{array}{rr} 4 & -14 \\\\ 10 & -32 \end{array}\right]=\left[\begin{array}{ll} 20 & -70 \\\\ 50 & -160 \end{array}\right].\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Properties of Matrix Multiplication</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Matrix multiplication is quite different from multiplication of
+numbers, and in general,</p>
+
+<ol>
+<li>\(A\cdot B\neq B\cdot A\).</li>
+<li>\(A\cdot C=B\cdot C\) does not always imply \(A=B\).</li>
+<li>\(A\cdot B = 0\) without either being equal to 0.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Transpose of a Matrix</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Flips rows and columns of a matrix.</li>
+<li>From a \(m\times n\) matrix, produces a \(n\times m\) matrix.</li>
+<li>Example: \[\left[\begin{array}{rrrr} 1 & 2 & 3 & 0 \\\\ 4 & 5 & 6 & 8\end{array}\right]^T= 
+\left[\begin{array}{rr}1& 4\\2&5\\3&6\\0&8\end{array}\right]\]</li>
+</ol>
+
+<p>Properties:</p>
+
+<ol>
+<li>\((A^T)^T=A\)</li>
+<li>\((AB)^T=B^TA^T\). Note the change in the order.</li>
+</ol>
+
+<p>Question: If \(u,v\in\mathbf{R}^n\), what sort of an object is \(u^Tv\)?</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Linear Systems</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>\[\begin{array}{lllllr}
+3x & &+2z &+2w &= & -8\\
+2x & +3y & +5z &-w &= & 4\\
+x &  &  &+w &= & 6\\
+\end{array}\]</p>
+
+<p>This system can be written in a matrix form as \(\mathbf{Ax} = \mathbf{b}\),
+where 
+\[\mathbf{A} = \left[\begin{array}{rrrr} 3 & 0 & 2 & 2 \\ 2 & 3 & 5 & -1 \\1& 0 & 1 & 1\end{array}\right],\quad\mathbf{x} = \left[\begin{array}{c}x\\y\\z\\w\end{array}\right],\quad\mathbf{b}=\left[\begin{array}{r}-8\\4\\6\end{array}\right].\]</p>
+
+<p>The <strong><em>augmented matrix</em></strong> for this system is:
+\[ \left[\begin{array}{rrrr|r} 3 & 0 & 2 & 2 & -8 \\ 2 & 3 & 5 & -1 & 4\\1& 0 & 1 & 1 & 6\end{array}\right].\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>RREF</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Stands for Row Reduced Echelon Form.</p>
+
+<p>Example:
+\[\left[\begin{array}{rrrrr}\fbox{1} & 0 & 3 & 0 & 4\\0 & \fbox{1} & 2 & 0 & 1\\0 & 0 & 0 & \fbox{1} & 2\\0 & 0 & 0 & 0 & 0\\0 & 0 & 0 & 0 & 0\\\end{array}\right].\]</p>
+
+<ul>
+<li>A boxed number indicates a <strong><em>leading entry</em></strong> of a row.</li>
+<li>Columns containing a leading entry are called <strong><em>pivot columns</em></strong>.</li>
+<li>Column 1, 2, 4 are pivot columns.</li>
+<li><strong><em>Rank</em></strong> = No. of pivot columns = No. of leading entries</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>What is RREF?</h3>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>All &quot;0 rows&quot; are at the bottom of the matrix.</li>
+<li>Leading entries of the successive rows keep &quot;moving right&quot;.</li>
+<li>All pivot columns have exactly one 1, and rest of their entries are 0s.</li>
+</ul>
+
+<p><strong>It is easy to solve linear systems once their
+augmeted matrix is put in an RREF.</strong> Example on the board.</p>
+
+<p><strong>Therefore, the first (and the biggest) step in solving a linear system is transforming its augmented matrix
+in the RREF!</strong></p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>Elementary row operations</h3>
+  </hgroup>
+  <article data-timings="">
+    <ul>
+<li>Interchange rows \(i\) and \(j.\) Denoted as \(\mathbf{R}_i\leftrightarrow \mathbf{R}_j.\)</li>
+<li>Multiply row \(i\) by a non-zero scalar \(c:\) Denoted as \(\mathbf{R}_i \leftarrow c\mathbf{R}_i.\)</li>
+<li>Add a non-zero multiple of a row \(i\) to row \(j\) and store the result in row \(j:\) 
+Denoted as \(\mathbf{R}_j \leftarrow \mathbf{R}_j + c\mathbf{R}_i.\)</li>
+</ul>
+
+<h3>More about RREF</h3>
+
+<ul>
+<li>Any matrix can be brought into a (unique) RREF using a sequence of elementary row  operations.
+--&gt; <strong><em>Gauss-Jordan Elimination</em></strong></li>
+<li>Each elementary row operation corresponds to multiplying the given matrix by an <strong><em>Elementary Matrix</em></strong>
+on the left.</li>
+<li>Elementary matrices are square matrices, whose inverse is the elementary matrix corresponding to the &quot;opposite&quot; row operation.</li>
+<li>Gauss-Jordan Elimination is perhaps <em>the</em> <em>most important</em> topic from math 250.</li>
+<li>Example of Gauss-Jordan Elimination on the board (if there is time).</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Inverse of a matrix</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>We talk of inverses only for square matrices.</li>
+<li><strong><em>Inverse</em></strong> of an \(n\times n\) matrix \(\mathbf{A}\) (if it exists) is another \(n\times n\) matrix \(\mathbf{B}\)
+such that \[\mathbf{A}\cdot\mathbf{B} = \mathbf{I}_n = \mathbf{B}\cdot\mathbf{A}.\]</li>
+<li>Inverse, if it exists is unique. </li>
+<li>Matrices without inverses are called <strong>singular</strong>, else are called <strong>invertible</strong> or <strong>non-singular</strong>. </li>
+<li>If \(\mathbf{A}\) is invertible, then \(\mathbf{A}\mathbf{x}=\mathbf{b}\) has a <em>unique</em> solution for
+any vector \(\mathbf{b}\) of appropriate size, and that solution is given by \(\mathbf{x}=\mathbf{A}^{-1}\mathbf{b}.\)</li>
+<li>A matrix is invertible if and only if its determinant is non-zero.</li>
+</ol>
+
+<p>Questions:  What is the RREF of an invertible matrix? What is the rank of an invertible matrix of size \(n\times n\)?</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>Finding inverse</h3>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>Make an augmented matrix \([\mathbf{A}|\mathbf{I}_n]\). </li>
+<li>Now perform row operations on this augmented matrix 
+so that the &quot;left block&quot; gets transformed
+into an identity matrix. </li>
+<li>Say you arrive at \([\mathbf{I}_n|\mathbf{B}]\), then \(\mathbf{B}\) is the inverse of \(\mathbf{A}\).</li>
+<li>If you arrive at a &quot;zero row&quot; in the left block, then the matrix is singular.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>Examples:</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>(1) Invertible example:</p>
+
+<p>\[ \mathbf{A} = \left[\begin{array}{rr}2 & 0\\-2 & 2\end{array}\right] \xrightarrow{\text{Augment}}
+ \left[\begin{array}{rr|rr}2 & 0&1&0\\-2 & 2&0&1\end{array}\right]
+ \xrightarrow{\text{Row Ops}} \left[\begin{array}{rr|rr}1 & 0&1/2&0\\0 & 1&1/2&1/2\end{array}\right]\]</p>
+
+<p>So \(\mathbf{A}\) is invertible and</p>
+
+<p>\[\mathbf{A}^{-1}=\left[\begin{array}{rr}1/2&0\\1/2&1/2\end{array}\right].\]</p>
+
+<p>(2) A singular example:</p>
+
+<p>\[\mathbf{A}=
+\left[\begin{array}{rrr}
+1&2&1 \\2&3&-4\\2&3&7
+\end{array}\right] \xrightarrow{\text{Augmentation, Row ops}}
+\left[\begin{array}{rrr|rrr}
+1&2&1&1&0&0\\
+0&-1&-6&-2&1&0\\
+0&0&0&-3&1&1
+\end{array}\right].
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Subspaces</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Fix a value of \(n\), we will talk of subspaces of \(\mathbb{R}^n\).</p>
+
+<p>\(S\) is called a <strong><em>subspace</em></strong> of \(\mathbb{R}^n\) if:</p>
+
+<ol>
+<li>\(S\) is a collection of vectors from \(\mathbb{R}^n.\)</li>
+<li>Zero vector is a member of \(S\).</li>
+<li>If \(\mathbf{u}\in S\) and \(c\) is any scalar, then \(c\mathbf{u} \in S\).</li>
+<li>If \(\mathbf{u},\mathbf{v}\in S\), then \(\mathbf{u}+\mathbf{v}\in S\).</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>Basic Examples</h3>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li>\(S=\{\mathbf{0}\}.\)</li>
+<li>\(S=\mathbb{R}^n.\)</li>
+</ol>
+
+<h3>Geometric examples:</h3>
+
+<ol>
+<li>Any line passing through the origin</li>
+<li>Any plane passing through the origin</li>
+<li>Any &quot;hyper-plane&quot; passing through the origin</li>
+</ol>
+
+<p>(Examples on the board)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>Examples Continued</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>&quot;Spock, take me through that subspace fracture&quot; --- Kirk.</p>
+
+<p>&quot;Ever took linear algebra, Sir?&quot; --- Spock.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>Examples continued</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>Given a set of vectors \(\mathbf{u}_1,\mathbf{u}_2,\mathbf{u}_3,\dots,\mathbf{u}_k\),
+the <strong>span</strong> of these vectors is the collection of all possible vectors \(\mathbf{v}\)
+which can be written as 
+\(\mathbf{v} = c_1\mathbf{u}_1+c_2\mathbf{u}_2+\dots+c_k\mathbf{u}_k.\)</p>
+
+<p>Spans are always subspaces!</p>
+
+<p>Collection of vectors of the form \(\begin{bmatrix}2a+b\\b-c\\a\end{bmatrix}\)  is the
+span of \(\begin{bmatrix}2\\0\\1\end{bmatrix}, \begin{bmatrix}1\\1\\0\end{bmatrix},\begin{bmatrix}0\\-1\\0\end{bmatrix}\),
+since
+\[\begin{bmatrix}2a+b\\b-c\\a\end{bmatrix}= 
+a\begin{bmatrix}2\\0\\1\end{bmatrix}+b \begin{bmatrix}1\\1\\0\end{bmatrix}+c\begin{bmatrix}0\\-1\\0\end{bmatrix}.\]</p>
+
+<p>Question: What about collection of vectors of the form \(\begin{bmatrix}a\\b+a\\a-3\end{bmatrix}?\)</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Linear Independence</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Caution: An extremely important concept.</p>
+
+<ul>
+<li><p>A set \(V=\{\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_k\}\) of vectors in \(\mathbb{R}^n\) is called <strong><em>Linearly Dependent</em></strong> if there exist scalars \(c_1,c_2,\dots,c_k\), <strong>not all zero</strong> such that \[c_1\mathbf{v}_1+c_2\mathbf{v}_2+\dots+c_k\mathbf{v}_k=\mathbf{0}.\]
+Otherwise, the set is called <strong><em>Linearly Independent</em></strong></p></li>
+<li><p>In other words, if the only scalars which satisfy \(c_1\mathbf{v}_1+c_2\mathbf{v}_2+\dots+c_k\mathbf{v}_k=\mathbf{0}\) are \(c_1=0,c_2=0,\cdots,c_k=0\), then \(V\) is linearly independent.</p></li>
+<li><p>Any set \(V\) which contains the \(\mathbf{0}\) vector is linearly dependent.</p></li>
+<li><p>Btw, a vector of the form \(c_1\mathbf{v}_1+c_2\mathbf{v}_2+\dots+c_k\mathbf{v}_k\) is called a <strong><em>Linear Combination</em></strong> of the vectors \(\mathbf{v}_1,\mathbf{v}_2,\dots,\mathbf{v}_k.\)</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>Example</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>\[V = \left\lbrace\mathbf{v}_1= \begin{bmatrix}1\\2\\0\\1\end{bmatrix},
+\mathbf{v}_2= \begin{bmatrix}0\\1\\1\\2\end{bmatrix},\mathbf{v_3}= \begin{bmatrix}1\\1\\-1\\-1\end{bmatrix}    \right\rbrace.\]</p>
+
+<p>Of course, \(\mathbf{v}_1+\mathbf{v}_2+\mathbf{v}_3=\mathbf{0}.\) So \(c_1=c_2=c_3=1\) in the definition of linear dependence =&gt; \(V\) is L.D.</p>
+
+<p>How do we see it in a non-ad-hoc way? RREFs!</p>
+
+<p>Essentially, we are trying to solve the system 
+\[\begin{bmatrix}\vdots & \vdots &  \cdots & \vdots \\ \mathbf{v}_1 & \mathbf{v}_2 & \cdots & \mathbf{v}_k \\\vdots & \vdots &  \cdots & \vdots \end{bmatrix}
+\begin{bmatrix}c_1\\c_2\\ \vdots\\c_k\end{bmatrix}=\mathbf{0}.\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p>\[
+\mathbf{A}=\begin{bmatrix}\vdots & \vdots &  \cdots & \vdots \\ \mathbf{v}_1 & \mathbf{v}_2 & \cdots & \mathbf{v}_k \\\vdots & \vdots &  \cdots & \vdots \end{bmatrix}
+=\begin{bmatrix}1&0&1\\2&1&1\\0&1&-1\\1&2&-1\end{bmatrix}\xrightarrow{\text{RREF}}
+\begin{bmatrix}1&0&1\\0&1&-1\\0&0&0\\0&0&0\end{bmatrix}\]</p>
+
+<ul>
+<li><p>If \(\mathbf{A}\) has any non-pivot columns, (the \(3^\text{rd}\) column above), then the columns of \(\mathbf{A}\) form a set of linearly dependent vectors.</p></li>
+<li><p>In fact, the pivot columns of \(\mathbf{A}\), (the \(1^\text{st}\) and \(2^\text{nd}\) columns) form a set of linearly independent vectors. So, \(L=\{ \mathbf{v}_1,\mathbf{v_2}\}\) is a linearly independent subset of \(V=\{\mathbf{v}_1,\mathbf{v}_2,\mathbf{v}_3 \}.\)</p></li>
+<li><p>In other words, if Rank of \(\mathbf{A}\) (= the number of pivot columns) equals the number of columns of \(\mathbf{A}\), then the columns
+of \(\mathbf{A}\) form a linearly independent set.</p></li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h2>Bases</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>Let us talk of bases of \(\mathbb{R}^n.\) In general, one can talk of bases for any subspace for \(\mathbb{R}^n\). </p>
+
+<p>Caution: An extremely important concept.</p>
+
+<p>A set of vectors \(V\) in \(\mathbb{R}^n\) is called a <strong><em>Basis</em></strong> for \(\mathbb{R}^n\) if:</p>
+
+<ol>
+<li>\(V\) spans \(\mathbb{R}^n\), i.e., any \(n\)-dimensional vector can be expressed as a linear combination of vectors in \(V.\)</li>
+<li>\(V\) forms a linearly independent set.</li>
+</ol>
+
+<p>Notes:</p>
+
+<ol>
+<li>A basis for \(\mathbb{R}^n\) will have exactly \(n\) vectors. </li>
+<li>If \(V\) has size less than \(n\), then \(V\) won&#39;t span \(\mathbb{R}^n.\)</li>
+<li>If \(V\) has size greater than \(n\), then \(V\) will necessarily be linearly dependent, as the matrix \(\mathbf{A}=[\mathbf{v}_1,\dots,\mathbf{v}_k]\) will
+have a non-pivot column.</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>Analysis</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>First form the matrix \(\mathbf{A}=\begin{bmatrix}\vdots & \vdots &  \cdots & \vdots \\ \mathbf{v}_1 & \mathbf{v}_2 & \cdots & \mathbf{v}_k \\\vdots & \vdots &  \cdots & \vdots \end{bmatrix}.\)</p>
+
+<ul>
+<li>If RREF of \(\mathbf{A}\) has no non-zero rows, then the columns of \(\mathbf{A}\) span \(\mathbb{R}^n\).</li>
+<li>If each column of \(\mathbf{A}\) is a pivot column, then the columns of \(\mathbf{A}\) are linearly independent.</li>
+</ul>
+
+<p>Therefore,</p>
+
+<ul>
+<li>If the RREF of \(\mathbf{A}\) satisfies both the conditions, then the columns of \(\mathbf{A}\) form a basis of \(\mathbb{R}^n.\)</li>
+<li>If the RREF of \(\mathbf{A}\) satisfies both the conditions, then the RREF equals the identity matrix \(\mathbf{I}_n!\)</li>
+</ul>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <hgroup>
+    <h3>Examples</h3>
+  </hgroup>
+  <article data-timings="">
+    <p>In each of the following cases, answer:</p>
+
+<ol>
+<li>If the columns of \(\mathbf{A}\) span \(\mathbb{R}^n\), for some appropriate value of \(n\).</li>
+<li>What is this appropriate value of \(n\)?</li>
+<li>Are columns of \(\mathbf{A}\) linearly independent?</li>
+<li>Which columns of \(\mathbf{A}\) form a linearly independent set?</li>
+<li>Do columns of \(\mathbf{A}\) form a basis of \(\mathbb{R}^n\) for some appropriate value of \(n\)?</li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="class" id="id" style="background:;">
+  <article data-timings="">
+    <p>\[
+\begin{align}
+(1) \quad \mathbf{A}= \begin{bmatrix} 1 & 0 & 1 & 1\\1 & 1 & 2 & 0 \end{bmatrix}&\xrightarrow{\text{RREF}}
+\begin{bmatrix} 1 & 0 & 1 & 1\\0 & 1 & 1 & -1 \end{bmatrix}\\ & \\
+(2) \quad \mathbf{B}= \begin{bmatrix} 1 & 0 & 2\\2 & 1 & 5  \\ 3 & -1 & 5\end{bmatrix}&\xrightarrow{\text{RREF}}
+\begin{bmatrix} 1 & 0 & 2 \\0 & 1 & -1 \\ 0 & 0 & 0 \end{bmatrix}\\ & \\
+(3) \quad \mathbf{C} = \begin{bmatrix} 1 & 0 & 2\\2 & 1 & 5  \\ 3 & -1 & 0\end{bmatrix}&\xrightarrow{\text{RREF}}
+\begin{bmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}\end{align}
+\]</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title=''>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='Matrices'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='Matrix Multiplication'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='Properties of Matrix Multiplication'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title='Transpose of a Matrix'>
+         5
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=6 title='Linear Systems'>
+         6
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=7 title='RREF'>
+         7
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=8 title='What is RREF?'>
+         8
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=9 title='Elementary row operations'>
+         9
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=10 title='Inverse of a matrix'>
+         10
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=11 title='Finding inverse'>
+         11
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=12 title='Examples:'>
+         12
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=13 title='Subspaces'>
+         13
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=14 title='Basic Examples'>
+         14
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=15 title='Examples Continued'>
+         15
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=16 title='Examples continued'>
+         16
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=17 title='Linear Independence'>
+         17
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=18 title='Example'>
+         18
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=19 title=''>
+         19
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=20 title='Bases'>
+         20
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=21 title='Analysis'>
+         21
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=22 title='Examples'>
+         22
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=23 title=''>
+         23
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- MathJax: Fall back to local if CDN offline but local image fonts are not supported (saves >100MB) -->
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [['$','$'], ['\\(','\\)']],
+        processEscapes: true
+      }
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <!-- <script src="https://c328740.ssl.cf1.rackcdn.com/mathjax/2.0-latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  </script> -->
+  <script>window.MathJax || document.write('<script type="text/x-mathjax-config">MathJax.Hub.Config({"HTML-CSS":{imageFont:null}});<\/script><script src="libraries/widgets/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"><\/script>')
+</script>
+<!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
