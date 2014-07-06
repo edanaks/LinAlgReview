@@ -24,7 +24,7 @@ knit        : slidify::knit2slides
 $$
 \mathbf{A}=\left[\begin{array}{rrr} 1 & 2 & 3 \\ 4 & 5 & 6 \end{array}\right]
 $$
-2. $\mathbf{A}_{ij}$ denotes the entry in $i^\text{th}$ row and $j^\text{th}$ column.
+2. $\mathbf{A}_{i,j}$ denotes the entry in $i^\text{th}$ row and $j^\text{th}$ column. So, $\mathbf{A}_{2,1} =4.$
 4. Column vectors of dimension $n$ are matrices of dimension $n \times 1$.
 5. Row vectors of dimension $n$ are matrices of dimension $1\times n$.
 6. Totality of row vectors of a fixed dimension $n$ is denoted as $\mathbb{R}^n$.
