@@ -331,8 +331,10 @@ First form the matrix $\mathbf{A}=\begin{bmatrix}\vdots & \vdots &  \cdots & \vd
 - If each column of $\mathbf{A}$ is a pivot column, then the columns of $\mathbf{A}$ are linearly independent.
 
 Therefore,
+
 - If the RREF of $\mathbf{A}$ satisfies both the conditions, then the columns of $\mathbf{A}$ form a basis of $\mathbb{R}^n.$
 - If the RREF of $\mathbf{A}$ satisfies both the conditions, then the RREF equals the identity matrix $\mathbf{I}_n!$
+- Columns of $\mathbf{A}$ form a basis of $\mathbb{R}^n$ if and only if $\mathbf{A}$ is an invertible (square) matrix.
 
 --- .class #id
 
