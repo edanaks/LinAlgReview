@@ -355,7 +355,7 @@ $$
 (1) \quad \mathbf{A}= \begin{bmatrix} 1 & 0 & 1 & 1\\1 & 1 & 2 & 0 \end{bmatrix}&\xrightarrow{\text{RREF}}
 \begin{bmatrix} 1 & 0 & 1 & 1\\0 & 1 & 1 & -1 \end{bmatrix}\\ & \\
 (2) \quad \mathbf{B}= \begin{bmatrix} 1 & 0 & 2\\2 & 1 & 5  \\ 3 & -1 & 5\end{bmatrix}&\xrightarrow{\text{RREF}}
-\begin{bmatrix} 1 & 0 & 2 \\0 & 1 & -1 \\ 0 & 0 & 0 \end{bmatrix}\\ & \\
+\begin{bmatrix} 1 & 0 & 2 \\0 & 1 & 1 \\ 0 & 0 & 0 \end{bmatrix}\\ & \\
 (3) \quad \mathbf{C} = \begin{bmatrix} 1 & 0 & 2\\2 & 1 & 5  \\ 3 & -1 & 0\end{bmatrix}&\xrightarrow{\text{RREF}}
 \begin{bmatrix} 1 & 0 & 0 \\0 & 1 & 0 \\ 0 & 0 & 1 \end{bmatrix}\end{align}
 $$
