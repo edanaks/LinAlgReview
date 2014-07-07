@@ -27,7 +27,7 @@ $$
 + $\mathbf{A}_{i,j}$ denotes the entry in $i^\text{th}$ row and $j^\text{th}$ column. So, $\mathbf{A}_{2,1} =4.$
 + Column vectors of dimension $n$ are matrices of dimension $n \times 1$.
 + Row vectors of dimension $n$ are matrices of dimension $1\times n$.
-+ Totality of row vectors of a fixed dimension $n$ is denoted as $\mathbb{R}^n$.
++ Totality of column vectors of a fixed dimension $n$ is denoted as $\mathbb{R}^n$.
 + One can add or subtract matrices only if they have the **same size**.
 + The zero matrix $\mathbf{0}$ is a matrix each of whose entries is a zero.
 + Identity matrix $\mathbf{I}_n$ of size $n$ is a matrix with 1's on the diagonal and zeroes elsewhere.
